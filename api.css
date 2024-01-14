@@ -1,0 +1,50 @@
+h1 {
+    text-align: center;
+    color: black;
+    text-shadow: 1px 3px rgba(244, 237, 237, 0.8);
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #b8bedd;
+}
+
+.loader-box {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 300px;
+    background: #333;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.yt-video {
+    display: inline-block;
+    /* Her öğeyi blok içinde yan yana yerleştirir */
+    text-decoration: none;
+    background: #333;
+    max-width: 48%;
+    /* Her öğenin maksimum genişliği (2 öğe olduğu için yüzde 48) */
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    /* Altta küçük bir boşluk bırakmak için */
+    margin-right: 2%;
+    /* Sağ tarafta boşluk bırakmak için (2 öğe olduğu için yüzde 2) */
+    color: white;
+}
+
+.yt-video:nth-child(2n) {
+    margin-right: 0;
+    /* Her iki öğeden birinin sağına boşluk bırakmaz */
+}
+
+.yt-video img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    /* Resimlerin aşırı büyümesini önlemek için eklenmiş özellik */
+    display: block;
+    /* Resim elementini blok olarak düzenler */
+}
