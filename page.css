@@ -100,24 +100,38 @@ footer {
     text-decoration: underline;
   }
   
-.rating {
-    font-size: 2rem; /* Yıldızların boyutu */
+.rate {
+    float: right;
+    height: 10px;
+    padding: 0 20px;
 }
-
-.rating span {
-    cursor: pointer;
-    color: black; /* Yıldızların varsayılan rengi */
-    margin-right: 7px; /* Yıldızlar arası boşluk */
+.rate:not(:checked) > input {
+    position:fixed;
+    top:-9999px;
 }
-
-.rating span:hover {
-    color: #ffcc00; /* Tıklanan yıldıza kadar olan yıldızların rengi */
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:40px;
+    color:black;
 }
-
-.rating span:hover ~ span {
-    color: black; /* Tıklanan yıldızın sağında kalan yıldızların rengini sıfırla */
+.rate:not(:checked) > label:before {
+    content: '★ ';
 }
-
-.rating span:hover ~ span:hover {
-    color: #ffcc00; /* Tıklanan yıldızın sağındaki yıldızın rengini sıfırla */
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
 }

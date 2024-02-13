@@ -42,10 +42,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //RATING KISMI
+document.addEventListener('DOMContentLoaded', function () {
+    var rateDiv = document.querySelector('.rate');
+    // var notification = document.createElement('div');
+    // notification.style.display = 'none';
+    // rateDiv.appendChild(notification);
 
-function submitRating(rating) {
-    alert("Thanks! " + rating +  " star rating has been given.");
-}
+    rateDiv.addEventListener('change', function (event) {
+        var selectedValue = document.querySelector('input[name="rate"]:checked').value;
+        // notification.innerHTML = 'Your vote: ' + selectedValue + ' stars. Thank you for voting!';
+        // notification.style.display = 'block';
+
+        // Belirli bir süre sonra bildirimi kaldırabilirsiniz
+        // setTimeout(function () {
+        //     notification.style.display = 'none';
+        // }, 3000); // 3000 milisaniye (3 saniye) sonra bildirimi kaldır
+        alert('Your vote: ' + selectedValue + ' stars. Thank you for voting!');
+        return false;
+    });
+});
 
 //API KISMI
 const videoSection = document.querySelector("section");
